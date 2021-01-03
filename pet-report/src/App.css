@@ -41,7 +41,7 @@ h1 {
 .about-text {
   background-color: rgba(73, 211, 235, 0.7);
   margin-left: -6rem;
-  
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .about-text h3 {
@@ -66,22 +66,23 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #414141;
+  background-color: #c2c2c2;
   margin-top: 5rem;
   height: 55rem;
 }
 
 
 .form-preview {
-  height: 38rem;
+  min-height: 38rem;
   min-width: 26rem;
+  max-width: 26rem;
   margin-right: 2rem;
   margin-top: 3rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   background-color: #ffffff;
   border-radius: 2px;
-  box-shadow: 7px 8px 3px black;
+  box-shadow: 7px 8px 3px rgb(87, 87, 87);
   background-image: url('./images/form-bg-texture.jpg');
   background-repeat: no-repeat;
   background-size: 430px 180px
@@ -90,6 +91,7 @@ h1 {
 .report-grid span {
   margin-left: 1rem;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .form-preview h3 {
@@ -102,6 +104,7 @@ h1 {
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 3rem;
+  
 }
 
 p.form-sociability {
@@ -112,10 +115,25 @@ span.sociability-info {
   font-size: 12px;
 }
 
+.report-notes-input {
+  border: 1px solid grey;
+  min-height: 8.2rem;
+  max-height: 15rem;
+  min-width: 25rem;
+  max-width: 25rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  display: block;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow: hidden;
+}
+
 .edit-form {
   height: 35rem; 
-  width: 28rem;
-  min-width: 24rem;
+  width: 22rem;
+  min-width: 22rem;
 }
 
 select,
@@ -127,12 +145,12 @@ input {
 }
 
 .teachers-notes {
-  outline: none
+  outline: none;
+  width: 20rem;
 }
 
 button {
   margin-left: 0.3rem;
-  
 }
 
 label {
