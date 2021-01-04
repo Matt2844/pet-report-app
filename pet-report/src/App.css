@@ -8,7 +8,7 @@ h1 {
   padding-bottom: 1rem;
   margin-top: 0px;
   font-weight: 300;
-  background-color: #5FCFD7;
+  background-color: rgba(73, 211, 235, 0.7);
   color: white;
 }
 
@@ -66,9 +66,13 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #c2c2c2;
+  background-color: #9edeed;
   margin-top: 5rem;
   height: 55rem;
+}
+
+.form-wrapper {
+  height: 40rem;
 }
 
 
@@ -77,15 +81,29 @@ h1 {
   min-width: 26rem;
   max-width: 26rem;
   margin-right: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   background-color: #ffffff;
   border-radius: 2px;
-  box-shadow: 7px 8px 3px rgb(87, 87, 87);
+  border: 1px solid grey;
+  border-bottom: 2px solid grey;
+  box-shadow: 3px 4px 2px rgb(87, 87, 87);
   background-image: url('./images/form-bg-texture.jpg');
   background-repeat: no-repeat;
   background-size: 430px 180px
+}
+
+.report-ribbon-title {
+  margin-bottom: -2rem;
+  margin-left: 10.7rem;
+  margin-top: 2rem;
+  height: 3.3rem; 
+  width: auto;
+}
+
+.report-grid {
+  font-family: 'Roboto', sans-serif;
 }
 
 .report-grid span {
@@ -95,12 +113,14 @@ h1 {
 }
 
 .form-preview h3 {
+  font-family: 'Roboto', Helvetica;
   text-align: center;
   padding-top: 1rem;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .form-pet-name {
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 3rem;
@@ -115,10 +135,21 @@ span.sociability-info {
   font-size: 12px;
 }
 
+.screenshot-button {
+  margin-left: 7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.screenshot-manual {
+  margin-left: 5.2rem;
+}
+
+
 .report-notes-input {
   border: 1px solid grey;
   min-height: 8.2rem;
-  max-height: 15rem;
+  resize: none;
   min-width: 25rem;
   max-width: 25rem;
   margin-top: 0.5rem;
@@ -131,9 +162,17 @@ span.sociability-info {
 }
 
 .edit-form {
-  height: 35rem; 
+  height: 39.4rem; 
   width: 22rem;
   min-width: 22rem;
+  margin-top: -3rem;
+}
+
+.name-required, 
+.date-required {
+  margin-left: 1.7rem;
+  font-size: 12px;
+  opacity: 0.4;
 }
 
 select,
@@ -151,18 +190,38 @@ input {
 
 button {
   margin-left: 0.3rem;
+  background-color: rgb(37, 38, 38);
+  color: rgb(205, 205, 205);
+  outline: none;
+  font-family: inherit;
+  border:0;
+  padding: 0.3rem;
+  cursor: pointer;
+  opacity: 0.9;
+  border-radius: 5px;
+  transition: 0.2s
+}
+
+button:hover {
+  opacity: 1;
+  background-color: black;
 }
 
 label {
-  font-family: monospace;
+  font-family: 'Roboto';
+  font-size: 13px;
+}
+
+.input-container label {
+  margin-right: 7.1rem;
 }
 
 .inputs {
   padding-left: 0.8rem;
   padding-top: 0.6rem;
   height: 44rem;
-  border: 1px solid black;
-  border-radius: 11px;
+  border-radius: 4px;
   background-color: rgb(53, 53, 53);
   color: white;
 }
+

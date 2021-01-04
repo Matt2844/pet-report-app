@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+import ribbon from './images/ribbon.png'
 
+import jsPdf from "jspdf";
+import domtoimage from 'dom-to-image'
+import "./App.css";
 
 
 export default function Form () {
@@ -14,51 +18,104 @@ export default function Form () {
   const [sociability, setSociability] = useState('Very Sociable');
   const [cooperation, setCooperation] = useState('Very Cooperative');
   const [grade, setGrade] = useState('A+');
-  const [notes, setNotes] = useState(`EXAMPLE PLACEHOLDER: It was so much fun to look after Spot! He behaved very well. He lost his ball at the park, but we were able to get him a new one. This box can be extended my manually dragging down the corner.`)
+  const [notes, setNotes] = useState('')
 
   // Setting the state for the hide and show buttons. 
-  const [show, setShow] = useState(true)
+  const [showCompany, setShowCompany] = useState(true);
+  const [showWalks, setShowWalks] = useState(true);
+  const [showOutside, setShowOutside] = useState(true);
+  const [showAppetite, setShowAppetite] = useState(true);
+  const [showSociability, setShowSociability] = useState(true);
+  const [showCooperation, setShowCooperation] = useState(true);
+  const [showGrade, setShowGrade] = useState(true);
+  const [showCaregiverNotes, setShowCareGiverNotes] = useState(true);
+
+  // Screenshot
+  const takeScreenshot = () => {
+
+    const formArea = document.getElementById('screenshot');
+
+
+    domtoimage.toPng(formArea)
+      .then((dataUrl) => {
+        let img = new Image();
+        img.src = dataUrl;
+
+        const pdf = new jsPdf();
+        pdf.addImage(dataUrl, "JPEG", 10, 10);
+        pdf.save(`${new Date().toISOString()}.PR-PRO.pdf`)
+      })
+  };
+
 
 
   return (
 
     <div className="form-container">
-      <div className="form-preview">
+      <div>
+        <div className="form-wrapper" id="screenshot">
+          <div className="form-preview" >
 
-        {show === true ? (
-          <h3>{companyName}</h3>
-        ) : (
-            <h3>Pet Report Pro</h3>
-          )}
-        <div className="forms">
-          <p className="form-pet-name" >{petName}'s report card for the period of <br />{date}</p>
-          <div className="report-grid">
-            <hr />
-            <div className="report-walks">Total Number of Walks:<span>{walks}</span>
-              <hr />
-            </div>
-            <div className="report-outside">Estimated Time Outside Per Day:<span>{outsideTime}</span>
-              <hr />
-            </div>
-            <div className="report-appetite">Appetite:<span>{appetite}</span>
-              <hr />
-            </div>
-            <div className="report-sociability">Sociability:<span>{sociability}</span>
-              <hr /></div>
-            <div className="report-cooperation">Cooperation:<span>{cooperation}</span>
-              <hr />
-            </div>
-            <div className="report-grade">Overall Grade:<span>{grade}</span>
-              <hr />
-            </div>
-            <div className="report-notes">
-              <div className="report-notes-title">Caregiver Notes:</div>
-              <textarea className="report-notes-input" rows="4" cols="52" value={notes}>{notes}</textarea>
-            </div>
+            {showCompany === true ? (
+              <h3>{companyName}</h3>
+            ) : (
+                <img className="report-ribbon-title" alt="ribbon" src={ribbon} />
+              )}
+            <div className="forms">
+              <p className="form-pet-name" >{petName}'s report card for the period of <br />{date}</p>
+              <div className="report-grid">
+                <hr />
 
+                {showWalks === true ? (
+                  <div className="report-walks">Total Number of Walks:<span>{walks}</span>
+                    <hr />
+                  </div>
+                ) : null}
+
+                {showOutside === true ? (
+                  <div className="report-outside">Estimated Time Outside Per Day:<span>{outsideTime}</span>
+                    <hr />
+                  </div>
+                ) : null}
+
+                {showAppetite === true ? (
+                  <div className="report-appetite">Appetite:<span>{appetite}</span>
+                    <hr />
+                  </div>
+                ) : null}
+
+                {showSociability === true ? (
+                  <div className="report-sociability">Sociability:<span>{sociability}</span>
+                    <hr /></div>
+                ) : null}
+
+                {showCooperation === true ? (
+                  <div className="report-cooperation">Cooperation:<span>{cooperation}</span>
+                    <hr />
+                  </div>
+                ) : null}
+
+                {showGrade === true ? (
+                  <div className="report-grade">Overall Grade:<span>{grade}</span>
+                    <hr />
+                  </div>
+                ) : null}
+
+                {showCaregiverNotes === true ? (
+                  <div className="report-notes">
+                    <div className="report-notes-title">Caregiver Notes:</div>
+                    <textarea className="report-notes-input" rows="4" cols="52" value={notes}>{notes}</textarea>
+                  </div>
+                ) : null}
+
+              </div>
+            </div>
           </div>
         </div>
+        <button className="screenshot-button" onClick={takeScreenshot} href="">Auto Screenshot to PDF</button><br />
+        <button className="screenshot-manual">Manual Screenshot (Higer Quality)</button>
       </div>
+
 
 
 
@@ -68,27 +125,27 @@ export default function Form () {
 
           <div className="input-container">
             <label>Company Name:</label><br />
-            <input className="company-name" onChange={event => setCompanyName(event.target.value)} type="text" placeholder="ex. Ford Dog Walking Inc."></input><button onClick={() => setShow(!show)}>Show / Hide</button><br />
+            <input className="company-name" onChange={event => setCompanyName(event.target.value)} type="text" placeholder="ex. Ford Dog Walking Inc."></input><button onClick={() => setShowCompany(!showCompany)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
             <label>Pet Name:</label><br />
-            <input className="pet-name" onChange={event => setPetName(event.target.value)} type="text" placeholder="ex. Spot"></input><span>Required</span><br />
+            <input className="pet-name" onChange={event => setPetName(event.target.value)} type="text" placeholder="ex. Spot"></input><span className="name-required">Required</span><br />
           </div>
 
           <div className="input-container">
             <label>Date(s):</label><br />
-            <input className="date" onChange={event => setDate(event.target.value)} type="text" placeholder="ex. Dec 5-10 or just 'Dec 5'"></input><span>Required</span><br />
+            <input className="date" onChange={event => setDate(event.target.value)} type="text" placeholder="ex. Dec 5-10 or just 'Dec 5'"></input><span className="date-required">Required</span><br />
           </div>
 
           <div className="input-container">
             <label>Total Walks:</label><br />
-            <input className="total-walks" onChange={event => setWalks(event.target.value)} type="text" placeholder="ex. 2"></input><button>Hide</button><button>Show</button><br />
+            <input className="total-walks" onChange={event => setWalks(event.target.value)} type="text" placeholder="ex. 2"></input><button onClick={() => setShowWalks(!showWalks)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
             <label>Est. Time Outside Per Day:</label><br />
-            <input className="time-outside-day" onChange={event => setOutsideTime(event.target.value)} type="text" placeholder="ex. 60 min"></input><button>Hide</button><button>Show</button><br />
+            <input className="time-outside-day" onChange={event => setOutsideTime(event.target.value)} type="text" placeholder="ex. 60 min"></input><button onClick={() => setShowOutside(!showOutside)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
@@ -99,7 +156,7 @@ export default function Form () {
               <option value="Some Issues with Appetite">Some Issues with Appetite</option>
               <option value="Barely Ate">Barely Ate</option>
             </select>
-            <button>Hide</button><button>Show</button><br />
+            <button onClick={() => setShowAppetite(!showAppetite)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
@@ -109,7 +166,7 @@ export default function Form () {
               <option value="Sociable">Sociable</option>
               <option value="Lone Wolf">Lone Wolf</option>
             </select>
-            <button>Hide</button><button>Show</button><br />
+            <button onClick={() => setShowSociability(!showSociability)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
@@ -119,7 +176,7 @@ export default function Form () {
               <option value="Cooperative">Cooperative</option>
               <option value="Fussy">Fussy</option>
             </select>
-            <button>Hide</button><button>Show</button><br />
+            <button onClick={() => setShowCooperation(!showCooperation)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
@@ -137,11 +194,11 @@ export default function Form () {
               <option value="D">D</option>
               <option value="F">F</option>
             </select>
-            <button>Hide</button><button>Show</button><br />
+            <button onClick={() => setShowGrade(!showGrade)}>Show / Hide</button><br />
           </div>
 
           <div className="input-container">
-            <label>Caregiver Notes:</label>
+            <label>Caregiver Notes:</label><button onClick={() => setShowCareGiverNotes(!showCaregiverNotes)}>Show / Hide</button>
             <textarea className="teachers-notes" rows="4" cols="50" onChange={event => setNotes(event.target.value)} >
 
             </textarea><br />
