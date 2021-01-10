@@ -3,7 +3,10 @@ import React, { useState } from 'react'
 import jsPdf from "jspdf";
 import domtoimage from 'dom-to-image'
 
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
+import EmailIcon from '@material-ui/icons/Email'
+import HelpIcon from '@material-ui/icons/Help';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 
 
@@ -31,6 +34,8 @@ export default function DashBoard () {
   const [showBehaviour, setShowBehaviour] = useState(true)
   const [showGrade, setShowGrade] = useState(true)
   const [showNotes, setShowNotes] = useState(true)
+
+
 
 
   // reads what theme it is and sets state accordingly
@@ -78,11 +83,11 @@ export default function DashBoard () {
   }
 
 
+
   // Screenshot
   const saveToPDF = () => {
 
     const formArea = document.getElementById('screenshot');
-
 
     domtoimage.toPng(formArea)
       .then((dataUrl) => {
@@ -95,19 +100,33 @@ export default function DashBoard () {
       })
   };
 
+
   return (
     <div className="dashboard-wrapper">
 
       <div className="menu-left">
-        <button onClick={saveToPDF}>
+        <button className="save-pdf" onClick={saveToPDF}>
           <PictureAsPdfIcon />
         </button>
+        <a href={`mailto:?subject=${petName}'s Report Card from ${companyName}`}>
+          <button className="send-email">
+            <EmailIcon />
+          </button>
+        </a>
+        <button className="frequently-asked-questions">
+          <HelpIcon />
+        </button>
+        <button className="settings">
+          <SettingsIcon />
+        </button>
+
       </div>
 
       <div className="report-card-section" id="screenshot">
         <div className="report-card-preview">
-
-          <h2 id="company-title">{companyName}</h2>
+          {showCompany === true ? (
+            <h2 id="company-title">{companyName}</h2>
+          ) : null}
           <div className="name-and-date">{petName}'s report card for the period of<br />
             <span>{date}</span>
           </div>
@@ -192,7 +211,7 @@ export default function DashBoard () {
             <select className="sociability" onChange={event => setSociability(event.target.value)}>
               <option value="Very Sociable" selected>Very Sociable</option>
               <option value="Sociable">Sociable</option>
-              <option value="Lone Wolf">Kept to Theml</option>
+              <option value="Kept to Themselves">Kept to Themselves</option>
             </select>
             <button onClick={() => setShowSociability(!showSociability)}>{showSociability ? "x" : "show"}</button>
           </div>
@@ -243,7 +262,7 @@ export default function DashBoard () {
 
           <div className="input-container">
             <label>Company Name:</label><br />
-            <input className="company-name" onChange={event => setCompanyName(event.target.value)} type="text"></input><button onClick={() => setShowCompany(!showCompany)}>x</button><br />
+            <input className="company-name" onChange={event => setCompanyName(event.target.value)} type="text"></input><button onClick={() => setShowCompany(!showCompany)}>{showCompany ? "x" : "show"}</button><br />
           </div>
 
           <div className="input-container">
@@ -257,7 +276,7 @@ export default function DashBoard () {
           </div>
 
           <div className="input-container">
-            <label className="company-font">Header:</label>
+            <label className="company-font">Heading:</label>
             <select className="clean-label" onChange={event => findCompanyFont(event.target.value)}>
               <option value="Sans Serif" selected>Sans Serif</option>
               <option value="Candara">Candara</option>
@@ -284,6 +303,6 @@ export default function DashBoard () {
 
       </div>
 
-    </div>
+    </div >
   )
 }

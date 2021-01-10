@@ -31,7 +31,7 @@ export default function NavAppBar () {
       <AppBar position="static" className={classes.bar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Pet Report Card Pro v. 1.0.0
+            Pet Report Pro v. 1.0.0
           </Typography>
           <Button color="inherit">Login</Button>
           <Button color="inherit">Register</Button>
