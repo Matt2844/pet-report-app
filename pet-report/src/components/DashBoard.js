@@ -11,31 +11,35 @@ import SettingsIcon from '@material-ui/icons/Settings';
 
 
 export default function DashBoard () {
-  {/* Theme State */ }
+  /* Theme State */
   const [selectTheme, setSelectTheme] = useState(true)
   const [basicTheme, setBasicTheme] = useState(false)
   const [boardingTheme, setBoardingTheme] = useState(false)
-  {/* Form State Set by the Form Editor */ }
+  const [petSittingTheme, setPetSittingTheme] = useState(false)
+  /* Form State Set by the Form Editor */
   const [companyName, setCompanyName] = useState('[Company Name]')
   const [petName, setPetName] = useState('[Pet Name]')
   const [date, setDate] = useState('[Date Example - Date Example]')
-  {/* Basic Theme */ }
+  /* Basic Theme */
   const [walks, setWalks] = useState('')
   const [outsideTime, setOutsideTime] = useState('')
   const [appetite, setAppetite] = useState('Ate Everything')
   const [sociability, setSociability] = useState('Very Sociable')
   const [behaviour, setBehaviour] = useState('Very Well Behaved')
   const [grade, setGrade] = useState('A+')
-  const [notes, setNotes] = useState('To edit notes, use the panel to the right.')
-  {/* Boarding Theme */ }
+  const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save and send this report card, click the PDF icon. Then click the Email icon. Drag the PDF into the email.')
+  /* Boarding Theme */
   const [gender, setGender] = useState('Their')
   const [boardingFriends, setBoardingFriends] = useState('[Pet Friends]')
   const [boardingToy, setBoardingToy] = useState('[Toy]')
   const [boardingActivity, setBoardingActivity] = useState('[Activity]')
+  /* Pet Sitting Theme */
+  const [treats, setTreats] = useState('')
+  const [energy, setEnergy] = useState('Energetic')
 
-  {/* Form State Set by the Hide or Show Buttons */ }
+  /* Form State Set by the Hide or Show Buttons */
   const [showCompany, setShowCompany] = useState(true)
-  {/* Basic Theme */ }
+  /* Basic Theme */
   const [showWalks, setShowWalks] = useState(true)
   const [showOutsideTime, setShowOutsideTime] = useState(true)
   const [showAppetite, setShowAppetite] = useState(true)
@@ -43,10 +47,13 @@ export default function DashBoard () {
   const [showBehaviour, setShowBehaviour] = useState(true)
   const [showGrade, setShowGrade] = useState(true)
   const [showNotes, setShowNotes] = useState(true)
-  {/* Boarding Theme */ }
+  /* Boarding Theme */
   const [showBoardingFriends, setShowBoardingFriends] = useState(true)
   const [showFavoriteToy, setShowFavoriteToy] = useState(true)
   const [showBoardingActivity, setShowBoardingActivity] = useState(true)
+  /* Pet Sitting Theme */
+  const [showTreats, setShowTreats] = useState(true)
+  const [showEnergy, setShowEnergy] = useState(true)
 
 
 
@@ -62,7 +69,15 @@ export default function DashBoard () {
     }
     if (theme === 'Boarding') {
       setBoardingTheme(true)
+    } else if (theme !== 'Boarding') {
+      setBoardingTheme(false)
     }
+    if (theme === 'Pet Sitting') {
+      setPetSittingTheme(true)
+    } else if (theme !== 'Pet Sitting') {
+      setPetSittingTheme(false)
+    }
+
   }
 
   // reads what font is selected
@@ -95,8 +110,8 @@ export default function DashBoard () {
     if (font === 'Didot') {
       document.getElementById('company-title').style.fontFamily = "didot"
     }
-    if (font === 'Brush Script') {
-      document.getElementById('company-title').style.fontFamily = "Brush Script"
+    if (font === 'Cursive') {
+      document.getElementById('company-title').style.fontFamily = "cursive"
     }
   }
 
@@ -217,6 +232,42 @@ export default function DashBoard () {
             </div>
           ) : null}
 
+          {/* PET SITTING THEME */}
+          {petSittingTheme === true ? (
+            <div className="report-data-section">
+              <div className="report-data-col1">
+                {showWalks === true ? (
+                  <div className="number-of-walks">Number of Walks:<span>{walks}</span></div>
+                ) : null}
+                {showOutsideTime === true ? (
+                  <div className="estimated-time-outisde">Estimated Time Outside Per Day:<span>{outsideTime}</span></div>
+                ) : null}
+                {showAppetite === true ? (
+                  <div className="appetite">Appetite:<span>{appetite}</span></div>
+                ) : null}
+                {showTreats === true ? (
+                  <div className="treats-pet-sitting">Treats:<span>{treats}</span></div>
+                ) : null}
+                {showEnergy === true ? (
+                  <div className="energy-level">Energy Level:<span>{energy}</span></div>
+                ) : null}
+                {showBehaviour === true ? (
+                  <div className="behaviour">Behaviour:<span>{behaviour}</span></div>
+                ) : null}
+                {showGrade === true ? (
+                  <div className="overall-grade">Overall Grade: <span>{grade}</span></div>
+                ) : null}
+                {showNotes === true ? (
+                  <div>
+                    <div className="notes">Notes:</div>
+                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                  </div>
+                ) : null}
+
+              </div>
+            </div>
+          ) : null}
+
         </div>
       </div>
 
@@ -332,6 +383,64 @@ export default function DashBoard () {
 
           ) : null}
 
+          {petSittingTheme === true ? (
+
+            <section>
+              <div className="input-container">
+                <label>Total Walks:</label>
+                <input className="total-walks" onChange={event => setWalks(event.target.value)} type="text"></input>
+                <button onClick={() => setShowWalks(!showWalks)}>{showWalks ? "x" : "show"} </button>
+              </div>
+
+              <div className="input-container">
+                <label className="time-outside-text">Est. Time Outside Per Day:</label>
+                <input className="time-outside-day" onChange={event => setOutsideTime(event.target.value)} type="text">
+                </input><button onClick={() => setShowOutsideTime(!showOutsideTime)}>{showOutsideTime ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Appetite:</label><br />
+                <select className="appetite" onChange={event => setAppetite(event.target.value)}>
+                  <option value="Ate Everything" selected>Ate Everything</option>
+                  <option value="Ate Almost Everything">Ate Almost Everything</option>
+                  <option value="Some Issues with Appetite">Issues With Appetite</option>
+                  <option value="Barely Ate">Barely Ate</option>
+                </select>
+                <button onClick={() => setShowAppetite(!showAppetite)}>{showAppetite ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label className="treats-label">Treats:</label>
+                <input className="treats-text" onChange={event => setTreats(event.target.value)} type="text">
+                </input><button onClick={() => setShowTreats(!showTreats)}>{showTreats ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Energy Level:</label><br />
+                <select className="energy-level" onChange={event => setEnergy(event.target.value)}>
+                  <option value="Very Energetic">Very Energetic</option>
+                  <option value="Energetic" selected>Energetic</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Calm">Calm</option>
+                  <option value="Sleepy">Sleepy</option>
+                  <option value="Very Sleepy">Very Sleepy</option>
+                </select>
+                <button onClick={() => setShowEnergy(!showEnergy)}>{showEnergy ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Behaviour:</label><br />
+                <select className="behaviour" onChange={event => setBehaviour(event.target.value)}>
+                  <option value="Very Cooperative" selected>Very Well Behaved</option>
+                  <option value="Cooperative">Well Behaved</option>
+                  <option value="Fussy">Fussy</option>
+                  <option value="Needs More Training">Needs More Training</option>
+                </select>
+                <button onClick={() => setShowBehaviour(!showBehaviour)}>{showBehaviour ? "x" : "show"}</button>
+              </div>
+
+            </section>) : null}
+
           <div className="input-container">
             <label>Overall Grade:</label>
             <select className="grade clean-label" onChange={event => setGrade(event.target.value)}>
@@ -389,7 +498,7 @@ export default function DashBoard () {
               <option value="Candara">Candara</option>
               <option value="Copperplate">Copperplate</option>
               <option value="Didot">Didot</option>
-              <option value="Brush Script">Brush Script</option>
+              <option value="Cursive">Cursive</option>
             </select>
           </div>
 
@@ -400,7 +509,6 @@ export default function DashBoard () {
               <option value="Candara">Candara</option>
               <option value="Copperplate">Copperplate</option>
               <option value="Didot">Didot</option>
-              <option value="Perpetua">Pertetua</option>
             </select>
           </div>
 
