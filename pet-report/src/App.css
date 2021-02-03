@@ -191,26 +191,31 @@ select {
 
 /* PDF, EMAIL, FAQ */
 
-.save-pdf {
-margin-top: 7rem;
-margin-left: 0.5rem;
-margin-bottom: 1rem;
-cursor: pointer;
-transition: 0.2s ease-out;
-}
 
-.send-email, 
+
+.save-pdf,
+.set-theme, 
 .frequently-asked-questions,
 .settings {
-  margin-left: 0.5rem;
+  all: unset; 
+  margin-top: 1rem; 
+  margin-left: 1.2rem;
   margin-bottom: 1rem; 
+  padding-top: 0.2rem;
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 0.3s ease-out;
 }
 
+.save-pdf {
+  margin-top: 6.3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+  }
+
 .save-pdf:hover,
-.send-email:hover, 
+.set-theme:hover, 
 .frequently-asked-questions:hover,
 .settings:hover {
-  color: rgb(75, 156, 227); 
+  color: white;
 }

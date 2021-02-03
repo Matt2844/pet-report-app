@@ -7,6 +7,7 @@ import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
 import EmailIcon from '@material-ui/icons/Email'
 import HelpIcon from '@material-ui/icons/Help';
 import SettingsIcon from '@material-ui/icons/Settings';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 
 
@@ -19,7 +20,7 @@ export default function DashBoard () {
   /* Form State Set by the Form Editor */
   const [companyName, setCompanyName] = useState('[Company Name]')
   const [petName, setPetName] = useState('[Pet Name]')
-  const [date, setDate] = useState('[Date Example - Date Example]')
+  const [date, setDate] = useState('[Date]')
   /* Basic Theme */
   const [walks, setWalks] = useState('')
   const [outsideTime, setOutsideTime] = useState('')
@@ -27,7 +28,7 @@ export default function DashBoard () {
   const [sociability, setSociability] = useState('Very Sociable')
   const [behaviour, setBehaviour] = useState('Very Well Behaved')
   const [grade, setGrade] = useState('A+')
-  const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save and send this report card, click the PDF icon. Then click the Email icon. Drag the PDF into the email.')
+  const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save and send this report card, click the PDF icon. When sending an email to a client, drag the PDF into the body of the email.')
   /* Boarding Theme */
   const [gender, setGender] = useState('Their')
   const [boardingFriends, setBoardingFriends] = useState('[Pet Friends]')
@@ -96,7 +97,7 @@ export default function DashBoard () {
     }
   }
 
-  // reads what font is selected for Company name
+  // Reads what font is selected for Company name
   const findCompanyFont = (font) => {
     if (font === 'Sans Serif') {
       document.getElementById('company-title').style.fontFamily = "sans-serif"
@@ -141,11 +142,9 @@ export default function DashBoard () {
         <button className="save-pdf" onClick={saveToPDF}>
           <PictureAsPdfIcon />
         </button>
-        <a href={`mailto:?subject=${petName}'s Report Card from ${companyName}`}>
-          <button className="send-email">
-            <EmailIcon />
-          </button>
-        </a>
+        <button className="set-theme">
+          <WbSunnyIcon />
+        </button>
         <button className="frequently-asked-questions">
           <HelpIcon />
         </button>
