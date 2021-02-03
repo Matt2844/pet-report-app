@@ -309,6 +309,9 @@ export default function DashBoard () {
                 {showCoat === true ? (
                   <div className="grooming-coat">Coat: <span>{coat}</span></div>
                 ) : null}
+                {showBehaviour === true ? (
+                  <div className="behaviour">Behaviour:<span>{behaviour}</span></div>
+                ) : null}
                 {showGrade === true ? (
                   <div className="overall-grade">Overall Grade: <span>{grade}</span></div>
                 ) : null}
@@ -556,7 +559,7 @@ export default function DashBoard () {
             <button onClick={() => setShowGrade(!showGrade)}>{showGrade ? "x" : "show"}</button><br />
           </div>
 
-          <div className="input-container">
+          <div className="input-container-notes input-container">
             <label>Notes:</label>
             <button onClick={() => setShowNotes(!showNotes)}>{showNotes ? "x" : "show"}</button>
             <textarea className="teachers-notes" rows="6" cols="19" onChange={event => setNotes(event.target.value)}>
