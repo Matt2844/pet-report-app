@@ -16,6 +16,7 @@ export default function DashBoard () {
   const [basicTheme, setBasicTheme] = useState(false)
   const [boardingTheme, setBoardingTheme] = useState(false)
   const [petSittingTheme, setPetSittingTheme] = useState(false)
+  const [groomingTheme, setGroomingTheme] = useState(false)
   /* Form State Set by the Form Editor */
   const [companyName, setCompanyName] = useState('[Company Name]')
   const [petName, setPetName] = useState('[Pet Name]')
@@ -36,6 +37,10 @@ export default function DashBoard () {
   /* Pet Sitting Theme */
   const [treats, setTreats] = useState('')
   const [energy, setEnergy] = useState('Energetic')
+  /* Pet Grooming Theme */
+  const [ears, setEars] = useState('Great')
+  const [skin, setSkin] = useState('Great')
+  const [coat, setCoat] = useState('Great')
 
   /* Form State Set by the Hide or Show Buttons */
   const [showCompany, setShowCompany] = useState(true)
@@ -54,6 +59,10 @@ export default function DashBoard () {
   /* Pet Sitting Theme */
   const [showTreats, setShowTreats] = useState(true)
   const [showEnergy, setShowEnergy] = useState(true)
+  /* Pet Grooming Theme */
+  const [showEars, setShowEars] = useState(true)
+  const [showCoat, setShowCoat] = useState(true)
+  const [showSkin, setShowSkin] = useState(true)
   /* Background color Theme */
   const [backgroundTheme, setBackgroundTheme] = useState('light');
 
@@ -78,6 +87,11 @@ export default function DashBoard () {
       setPetSittingTheme(true)
     } else if (theme !== 'Pet Sitting') {
       setPetSittingTheme(false)
+    }
+    if (theme === 'Grooming') {
+      setGroomingTheme(true)
+    } else if (theme !== 'Grooming') {
+      setGroomingTheme(false)
     }
 
   }
@@ -282,6 +296,32 @@ export default function DashBoard () {
             </div>
           ) : null}
 
+          {/* GROOMING THEME */}
+          {groomingTheme === true ? (
+            <div className="report-data-section">
+              <div className="report-data-col1">
+                {showEars === true ? (
+                  <div className="grooming-ears">Ears: <span>{ears}</span></div>
+                ) : null}
+                {showSkin === true ? (
+                  <div className="grooming-skin">Skin: <span>{skin}</span></div>
+                ) : null}
+                {showCoat === true ? (
+                  <div className="grooming-coat">Coat: <span>{coat}</span></div>
+                ) : null}
+                {showGrade === true ? (
+                  <div className="overall-grade">Overall Grade: <span>{grade}</span></div>
+                ) : null}
+                {showNotes === true ? (
+                  <div>
+                    <div className="notes">Notes:</div>
+                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+
         </div>
       </div>
 
@@ -414,7 +454,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Appetite:</label><br />
-                <select className="appetite" onChange={event => setAppetite(event.target.value)}>
+                <select className="appetite clean-label" onChange={event => setAppetite(event.target.value)}>
                   <option value="Ate Everything" selected>Ate Everything</option>
                   <option value="Ate Almost Everything">Ate Almost Everything</option>
                   <option value="Some Issues with Appetite">Issues With Appetite</option>
@@ -431,7 +471,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Energy Level:</label><br />
-                <select className="energy-level" onChange={event => setEnergy(event.target.value)}>
+                <select className="energy-level clean-label" onChange={event => setEnergy(event.target.value)}>
                   <option value="Very Energetic">Very Energetic</option>
                   <option value="Energetic" selected>Energetic</option>
                   <option value="Normal">Normal</option>
@@ -444,7 +484,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Behaviour:</label><br />
-                <select className="behaviour" onChange={event => setBehaviour(event.target.value)}>
+                <select className="behaviour clean-label" onChange={event => setBehaviour(event.target.value)}>
                   <option value="Very Cooperative" selected>Very Well Behaved</option>
                   <option value="Cooperative">Well Behaved</option>
                   <option value="Fussy">Fussy</option>
@@ -453,6 +493,49 @@ export default function DashBoard () {
                 <button onClick={() => setShowBehaviour(!showBehaviour)}>{showBehaviour ? "x" : "show"}</button>
               </div>
 
+            </section>) : null}
+
+          {groomingTheme === true ? (
+
+            <section>
+              <div className="input-container">
+                <label>Ears: </label>
+                <select className="grooming-ears clean-label" onChange={event => setEars(event.target.value)}>
+                  <option value="Great" selected>Great</option>
+                  <option value="Needs More Care">Needs More Care</option>
+                  <option value="Needs To See A Vet">Needs To See A Vet</option>
+                </select>
+                <button onClick={() => setShowEars(!showEars)}>{showEars ? "x" : "show"} </button>
+              </div>
+
+              <div className="input-container">
+                <label>Skin: </label>
+                <select className="grooming-skin clean-label" onChange={event => setCoat(event.target.value)}>
+                  <option value="Great" selected>Great</option>
+                  <option value="Needs More Care">Needs More Care</option>
+                  <option value="Needs To See A Vet">Needs To See A Vet</option>
+                </select>
+                <button onClick={() => setShowCoat(!showCoat)}>{showCoat ? "x" : "show"} </button>
+              </div>
+              <div className="input-container">
+                <label>Coat: </label>
+                <select className="grooming-coat clean-label" onChange={event => setSkin(event.target.value)}>
+                  <option value="Great" selected>Great</option>
+                  <option value="Needs More Care">Needs More Care</option>
+                  <option value="Needs To See A Vet">Needs To See A Vet</option>
+                </select>
+                <button onClick={() => setShowSkin(!showSkin)}>{showSkin ? "x" : "show"} </button>
+              </div>
+              <div className="input-container">
+                <label>Behaviour:</label><br />
+                <select className="behaviour clean-label" onChange={event => setBehaviour(event.target.value)}>
+                  <option value="Very Cooperative" selected>Very Well Behaved</option>
+                  <option value="Cooperative">Well Behaved</option>
+                  <option value="Fussy">Fussy</option>
+                  <option value="Needs More Training">Needs More Training</option>
+                </select>
+                <button onClick={() => setShowBehaviour(!showBehaviour)}>{showBehaviour ? "x" : "show"}</button>
+              </div>
             </section>) : null}
 
           <div className="input-container">
