@@ -17,10 +17,13 @@ export default function DashBoard () {
   const [boardingTheme, setBoardingTheme] = useState(false)
   const [petSittingTheme, setPetSittingTheme] = useState(false)
   const [groomingTheme, setGroomingTheme] = useState(false)
+  const [walkingTheme, setWalkingTheme] = useState(false)
   /* Form State Set by the Form Editor */
   const [companyName, setCompanyName] = useState('[Company Name]')
   const [petName, setPetName] = useState('[Pet Name]')
   const [date, setDate] = useState('[Date]')
+  /* Background color Theme */
+  const [backgroundTheme, setBackgroundTheme] = useState('light');
   /* Basic Theme */
   const [walks, setWalks] = useState('')
   const [outsideTime, setOutsideTime] = useState('')
@@ -41,7 +44,10 @@ export default function DashBoard () {
   const [ears, setEars] = useState('Great')
   const [skin, setSkin] = useState('Great')
   const [coat, setCoat] = useState('Great')
-
+  /* Walking Theme */
+  const [playedFetch, setPlayedFetch] = useState('Yes')
+  const [playedWithFriends, setPlayedWithFriends] = useState('Yes')
+  const [tuggedOnLeash, setTuggedOnLeash] = useState('No')
   /* Form State Set by the Hide or Show Buttons */
   const [showCompany, setShowCompany] = useState(true)
   /* Basic Theme */
@@ -63,8 +69,10 @@ export default function DashBoard () {
   const [showEars, setShowEars] = useState(true)
   const [showCoat, setShowCoat] = useState(true)
   const [showSkin, setShowSkin] = useState(true)
-  /* Background color Theme */
-  const [backgroundTheme, setBackgroundTheme] = useState('light');
+  /* Walking Theme */
+  const [showFetch, setShowFetch] = useState(true)
+  const [showPlayedWithFriends, setShowPlayedWithFriends] = useState(true)
+  const [showTuggedLeash, setShowTuggedLeash] = useState(true)
 
 
 
@@ -92,6 +100,11 @@ export default function DashBoard () {
       setGroomingTheme(true)
     } else if (theme !== 'Grooming') {
       setGroomingTheme(false)
+    }
+    if (theme === 'Walking') {
+      setWalkingTheme(true)
+    } else if (theme !== 'Walking') {
+      setWalkingTheme(false)
     }
 
   }
@@ -325,6 +338,41 @@ export default function DashBoard () {
             </div>
           ) : null}
 
+          {/* WALKING THEME */}
+          {walkingTheme === true ? (
+            <div className="report-data-section">
+              <div className="report-data-col1">
+                {showWalks === true ? (
+                  <div className="number-of-walks">Number of Walks:<span>{walks}</span></div>
+                ) : null}
+                {showOutsideTime === true ? (
+                  <div className="estimated-time-outisde">Estimated Time Outside Per Day:<span>{outsideTime}</span></div>
+                ) : null}
+                {showFetch === true ? (
+                  <div className="played-fetch">Played Fetch:<span>{playedFetch}</span></div>
+                ) : null}
+                {showPlayedWithFriends === true ? (
+                  <div className="played-with-friends">Played With Friends:<span>{playedWithFriends}</span></div>
+                ) : null}
+                {showTuggedLeash === true ? (
+                  <div className="tugged-leash">Tugged On Leash:<span>{tuggedOnLeash}</span></div>
+                ) : null}
+                {showBehaviour === true ? (
+                  <div className="behaviour">Behaviour:<span>{behaviour}</span></div>
+                ) : null}
+                {showGrade === true ? (
+                  <div className="overall-grade">Overall Grade: <span>{grade}</span></div>
+                ) : null}
+                {showNotes === true ? (
+                  <div>
+                    <div className="notes">Notes:</div>
+                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+
         </div>
       </div>
 
@@ -541,6 +589,51 @@ export default function DashBoard () {
               </div>
             </section>) : null}
 
+          {walkingTheme === true ? (
+            <section>
+              <div className="input-container">
+                <label>Total Walks:</label>
+                <input className="total-walks" onChange={event => setWalks(event.target.value)} type="text"></input>
+                <button onClick={() => setShowWalks(!showWalks)}>{showWalks ? "x" : "show"} </button>
+              </div>
+
+              <div className="input-container">
+                <label className="time-outside-text">Est. Time Outside Per Day:</label>
+                <input className="time-outside-day" onChange={event => setOutsideTime(event.target.value)} type="text">
+                </input><button onClick={() => setShowOutsideTime(!showOutsideTime)}>{showOutsideTime ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Played Fetch:</label><br />
+                <select className="played-fetch clean-label" onChange={event => setPlayedFetch(event.target.value)}>
+                  <option value='Yes' selected>Yes</option>
+                  <option value='No'>No</option>
+                </select>
+                <button onClick={() => setShowFetch(!showFetch)}>{showFetch ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Played With Friends:</label><br />
+                <select className="played-with-friends clean-label" onChange={event => setPlayedWithFriends(event.target.value)}>
+                  <option value='Yes' selected>Yes</option>
+                  <option value='No'>No</option>
+                </select>
+                <button onClick={() => setShowPlayedWithFriends(!showPlayedWithFriends)}>{showPlayedWithFriends ? "x" : "show"}</button>
+              </div>
+
+              <div className="input-container">
+                <label>Tugged On Leash:</label><br />
+                <select className="tugged-leash clean-label" onChange={event => setTuggedOnLeash(event.target.value)}>
+                  <option value='Yes' selected>Yes</option>
+                  <option value='No'>No</option>
+                </select>
+                <button onClick={() => setShowTuggedLeash(!showTuggedLeash)}>{showTuggedLeash ? "x" : "show"}</button>
+              </div>
+
+            </section>
+          ) : null
+          }
+
           <div className="input-container">
             <label>Overall Grade:</label>
             <select className="grade clean-label" onChange={event => setGrade(event.target.value)}>
@@ -566,7 +659,7 @@ export default function DashBoard () {
             </textarea>
           </div>
 
-        </div>
+        </div >
 
 
 
@@ -616,7 +709,7 @@ export default function DashBoard () {
 
         </div>
 
-      </div>
+      </div >
 
     </div >
   )
