@@ -4,7 +4,6 @@ import jsPdf from "jspdf";
 import domtoimage from 'dom-to-image'
 
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
-import EmailIcon from '@material-ui/icons/Email'
 import HelpIcon from '@material-ui/icons/Help';
 import SettingsIcon from '@material-ui/icons/Settings';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -28,7 +27,7 @@ export default function DashBoard () {
   const [sociability, setSociability] = useState('Very Sociable')
   const [behaviour, setBehaviour] = useState('Very Well Behaved')
   const [grade, setGrade] = useState('A+')
-  const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save and send this report card, click the PDF icon. When sending an email to a client, drag the PDF into the body of the email.')
+  const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save this report card, click the PDF icon. When sending an email to a client, attach or drag the PDF into the body of the email.')
   /* Boarding Theme */
   const [gender, setGender] = useState('Their')
   const [boardingFriends, setBoardingFriends] = useState('[Pet Friends]')
@@ -55,6 +54,8 @@ export default function DashBoard () {
   /* Pet Sitting Theme */
   const [showTreats, setShowTreats] = useState(true)
   const [showEnergy, setShowEnergy] = useState(true)
+  /* Background color Theme */
+  const [backgroundTheme, setBackgroundTheme] = useState('light');
 
 
 
@@ -130,9 +131,23 @@ export default function DashBoard () {
 
         const pdf = new jsPdf();
         pdf.addImage(dataUrl, "JPEG", 10, 10);
-        pdf.save(`${new Date().toISOString()}.PR-PRO.pdf`)
+        pdf.save(`${petName}_${new Date().toISOString()}.PR-PRO.pdf`)
       })
   };
+
+  // Change background from light to dark, or dark to light
+  const changeTheme = () => {
+    if (backgroundTheme === 'light') {
+      document.body.style.backgroundColor = '#0f0f0f'
+      document.getElementById('screenshot').style.color = 'rgb(60, 155, 180)'
+      setBackgroundTheme('dark');
+    }
+    if (backgroundTheme === 'dark') {
+      document.body.style.backgroundColor = 'white'
+      document.getElementById('screenshot').style.color = 'black'
+      setBackgroundTheme('light');
+    }
+  }
 
 
   return (
@@ -142,7 +157,7 @@ export default function DashBoard () {
         <button className="save-pdf" onClick={saveToPDF}>
           <PictureAsPdfIcon />
         </button>
-        <button className="set-theme">
+        <button className="set-theme" onClick={changeTheme}>
           <WbSunnyIcon />
         </button>
         <button className="frequently-asked-questions">
@@ -358,7 +373,7 @@ export default function DashBoard () {
               </div>
 
               <div className="input-container">
-                <label>Favority Toy:</label>
+                <label>Favorite Toy:</label>
                 <input className="favorite-toy" onChange={event => setBoardingToy(event.target.value)} type="text"></input>
                 <button onClick={() => setShowFavoriteToy(!showFavoriteToy)}>{showFavoriteToy ? "x" : "show"} </button>
               </div>

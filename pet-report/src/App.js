@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css'
+import './index.css'
 
 import NavAppBar from './components/NavAppBar'
 import DashBoard from './components/DashBoard'
