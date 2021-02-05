@@ -391,7 +391,6 @@ export default function DashBoard () {
               <option value="Pet Sitting">Pet Sitting</option>
               <option value="Grooming">Grooming</option>
               <option value="Walking">Walking</option>
-              <option value="Training">Training</option>
             </select>
           </div>
 
@@ -624,8 +623,9 @@ export default function DashBoard () {
               <div className="input-container">
                 <label>Tugged On Leash:</label><br />
                 <select className="tugged-leash clean-label" onChange={event => setTuggedOnLeash(event.target.value)}>
-                  <option value='Yes' selected>Yes</option>
-                  <option value='No'>No</option>
+                  <option value='Yes'>Yes</option>
+                  <option value='Sometimes'>Sometimes</option>
+                  <option value='No' selected>No</option>
                 </select>
                 <button onClick={() => setShowTuggedLeash(!showTuggedLeash)}>{showTuggedLeash ? "x" : "show"}</button>
               </div>
@@ -660,11 +660,6 @@ export default function DashBoard () {
           </div>
 
         </div >
-
-
-
-
-
 
 
         <div className="menu-col-2">
