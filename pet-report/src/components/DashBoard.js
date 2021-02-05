@@ -9,7 +9,6 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 
-
 export default function DashBoard () {
   /* Theme State */
   const [selectTheme, setSelectTheme] = useState(true)
@@ -204,6 +203,8 @@ export default function DashBoard () {
           <div className="name-and-date">{petName}'s report card for the period of<br />
             <span>{date}</span>
           </div>
+
+          <img className="ribbon-image" src="/images/ribbon.png" />
 
           {/* SELECT A THEME, THEME */}
           {selectTheme === true ? (

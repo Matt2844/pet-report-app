@@ -60,6 +60,13 @@
   text-align: center;
 }
 
+.ribbon-image {
+  height: 4rem;
+  width: auto;
+  margin-left: 14.8rem;
+  margin-top: -1rem;
+}
+
 .get-started {
   margin-left: 10rem;
   margin-top: 8rem;
@@ -197,10 +204,6 @@ select {
 }
 
 /* PDF, EMAIL, FAQ */
-
-
-
-
 
 .set-theme, 
 .frequently-asked-questions,
