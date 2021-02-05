@@ -220,7 +220,6 @@ select {
 .save-pdf {
   all: unset;
   margin-top: 4.8rem;
-  margin-bottom: 1rem;
   margin-left: 1.2rem;
   cursor: pointer;
   transition: 0.3s ease-out;

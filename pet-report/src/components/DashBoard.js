@@ -3,10 +3,13 @@ import React, { useState } from 'react'
 import jsPdf from "jspdf";
 import domtoimage from 'dom-to-image'
 
+import QuestionsModal from './QuestionsModal.js'
+
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
-import HelpIcon from '@material-ui/icons/Help';
 import SettingsIcon from '@material-ui/icons/Settings';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
+
+
 
 
 export default function DashBoard () {
@@ -176,6 +179,7 @@ export default function DashBoard () {
   }
 
 
+
   return (
     <div className="dashboard-wrapper">
 
@@ -186,9 +190,7 @@ export default function DashBoard () {
         <button className="set-theme" onClick={changeTheme}>
           <WbSunnyIcon />
         </button>
-        <button className="frequently-asked-questions">
-          <HelpIcon />
-        </button>
+        <QuestionsModal />
         <button className="settings">
           <SettingsIcon />
         </button>
