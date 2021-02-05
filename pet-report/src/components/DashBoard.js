@@ -412,7 +412,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Appetite:</label><br />
-                <select className="appetite" onChange={event => setAppetite(event.target.value)}>
+                <select className="appetite clean-label" onChange={event => setAppetite(event.target.value)}>
                   <option value="Ate Everything" selected>Ate Everything</option>
                   <option value="Ate Almost Everything">Ate Almost Everything</option>
                   <option value="Some Issues with Appetite">Issues With Appetite</option>
@@ -423,7 +423,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Sociability:</label><br />
-                <select className="sociability" onChange={event => setSociability(event.target.value)}>
+                <select className="sociability clean-label" onChange={event => setSociability(event.target.value)}>
                   <option value="Very Sociable" selected>Very Sociable</option>
                   <option value="Sociable">Sociable</option>
                   <option value="Kept to Themselves">Kept to Themselves</option>
@@ -433,7 +433,7 @@ export default function DashBoard () {
 
               <div className="input-container">
                 <label>Behaviour:</label><br />
-                <select className="behaviour" onChange={event => setBehaviour(event.target.value)}>
+                <select className="behaviour clean-label" onChange={event => setBehaviour(event.target.value)}>
                   <option value="Very Cooperative" selected>Very Well Behaved</option>
                   <option value="Cooperative">Well Behaved</option>
                   <option value="Fussy">Fussy</option>
