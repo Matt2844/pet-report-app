@@ -240,7 +240,7 @@ export default function DashBoard () {
                 {showNotes === true ? (
                   <div>
                     <div className="notes">Notes:</div>
-                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                    <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
               </div>
@@ -266,7 +266,7 @@ export default function DashBoard () {
                 {showNotes === true ? (
                   <div>
                     <div className="notes">Notes:</div>
-                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                    <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
               </div>
@@ -301,7 +301,7 @@ export default function DashBoard () {
                 {showNotes === true ? (
                   <div>
                     <div className="notes">Notes:</div>
-                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                    <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
 
@@ -331,7 +331,7 @@ export default function DashBoard () {
                 {showNotes === true ? (
                   <div>
                     <div className="notes">Notes:</div>
-                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                    <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
               </div>
@@ -366,7 +366,7 @@ export default function DashBoard () {
                 {showNotes === true ? (
                   <div>
                     <div className="notes">Notes:</div>
-                    <textarea className="notes-input" rows="14" cols="67" value={notes}></textarea>
+                    <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
               </div>
