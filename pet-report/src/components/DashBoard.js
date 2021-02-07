@@ -4,9 +4,9 @@ import jsPdf from "jspdf";
 import domtoimage from 'dom-to-image'
 
 import QuestionsModal from './QuestionsModal.js'
+import SettingsModal from './SettingsModal.js'
 
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
-import SettingsIcon from '@material-ui/icons/Settings';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 
@@ -191,9 +191,8 @@ export default function DashBoard () {
           <WbSunnyIcon />
         </button>
         <QuestionsModal />
-        <button className="settings">
-          <SettingsIcon />
-        </button>
+        <SettingsModal />
+
 
       </div>
 

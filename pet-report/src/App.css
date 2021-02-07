@@ -207,7 +207,7 @@ select {
 
 .set-theme, 
 .frequently-asked-questions,
-.settings {
+.settings-icon {
   all: unset; 
   margin-left: 1.2rem;
   margin-bottom: 1rem; 
@@ -228,7 +228,7 @@ select {
 .save-pdf:hover,
 .set-theme:hover, 
 .frequently-asked-questions:hover,
-.settings:hover {
+.settings-icon:hover {
   color: white;
 }
 
@@ -247,6 +247,8 @@ li h4 {
   font-weight: 1000;
 }
 
-.faq-heading {
+.faq-heading,
+.settings-heading {
   margin-bottom: 1.7rem;
+  text-align: center;
 }

@@ -19,9 +19,6 @@ const useStyles = makeStyles({
 export default function QuestionsModal () {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
     right: false,
   });
 
@@ -48,7 +45,7 @@ export default function QuestionsModal () {
         <li>
           <h4>1. My Report Card Is Complete, How Do I Send It To A Client?</h4>
           <p>Click the PDF icon on the left hand side. This will save the report card to your computer.
-          You can either hold onto the PDF and do nothing, or send it off to your client immediately.<br /><br />
+          You can either hold onto the PDF, or send it off to your client immediately.<br /><br />
           To forward the report card to your client, we recommend sending it by email. Simply attach the PDF to an email by dragging the PDF onto the body of the email.
           You can also click the attach button from your email and search for the PDF in your folders.
           </p>
