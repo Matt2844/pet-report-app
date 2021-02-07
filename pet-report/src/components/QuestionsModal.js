@@ -2,19 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import Divider from '@material-ui/core/Divider'
 import HelpIcon from '@material-ui/icons/Help';
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 600,
+    padding: '1rem',
+    paddingRight: '1.5rem',
   },
   fullList: {
     width: 'auto',
@@ -47,24 +42,34 @@ export default function QuestionsModal () {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <h3 className="faq-heading">Frequently Asked Questions</h3>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+      <ul>
+        <li>
+          <h4>1. My Report Card Is Complete, How Do I Send It To A Client?</h4>
+          <p>Click the PDF icon on the left hand side. This will save the report card to your computer.
+          You can either hold onto the PDF and do nothing, or send it off to your client immediately.<br /><br />
+          To forward the report card to your client, we recommend sending it by email. Simply attach the PDF to an email by dragging the PDF onto the body of the email.
+          You can also click the attach button from your email and search for the PDF in your folders.
+          </p>
+        </li>
+        <li>
+          <h4>2. Can I Customize The Report Card?</h4>
+          <p>Yes, just select a theme that suits your client the best. You can also select which fields you want to display.
+          Click the 'x' when editing the form to hide a specific field. You can also change the font style.
+          </p>
+        </li>
+        <li>
+          <h4>3. Can I Create And Save Default Settings?</h4>
+          <p>If you are logged in, then yes. Click the settings icon on the lefthand side. Then select the settings you want to
+          to use as the default. <br /><br />
+          This means that everytime you return to create a report card, part of the report card
+          will already be filled out with your selected settings.
+          </p>
+        </li>
+
+      </ul>
+    </div >
   );
 
   return (
