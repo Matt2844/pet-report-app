@@ -71,9 +71,9 @@ export default function QuestionsModal () {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)} className="frequently-asked-questions">
+          <button className="frequently-asked-questions" onClick={toggleDrawer(anchor, true)}>
             <HelpIcon />
-          </Button>
+          </button>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
           </Drawer>

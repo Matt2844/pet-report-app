@@ -18,7 +18,7 @@
   width: 4rem;
   background-color: rgb(60, 155, 180);
   height: 18rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   border-radius: 30px;
   box-shadow: 2px 3px 5px grey; 
 }
@@ -209,7 +209,6 @@ select {
 .frequently-asked-questions,
 .settings {
   all: unset; 
-  margin-top: 1rem; 
   margin-left: 1.2rem;
   margin-bottom: 1rem; 
   padding-top: 0.2rem;
@@ -221,6 +220,7 @@ select {
   all: unset;
   margin-top: 3.5rem;
   margin-left: 1.2rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: 0.3s ease-out;
   }
