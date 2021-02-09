@@ -233,7 +233,7 @@ select {
   color: white;
 }
 
-/* Info Drawers */
+/* INFO AND SETTINGS DRAWERS */
 
 ul {
   list-style: none;
@@ -252,4 +252,18 @@ li h4 {
 .settings-heading {
   margin-bottom: 1.7rem;
   text-align: center;
+}
+
+.company-name-settings {
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+}
+
+.theme-settings {
+  margin-left: 2rem;
+  margin-top: 3rem; 
+}
+
+#theme-select-field {
+  width: 9rem;
 }

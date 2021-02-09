@@ -76,7 +76,7 @@ export default function QuestionsModal () {
           <button className="frequently-asked-questions" onClick={toggleDrawer(anchor, true)}>
             <HelpIcon />
           </button>
-          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)} transitionDuration={700}>
             {list(anchor)}
           </Drawer>
         </React.Fragment>
