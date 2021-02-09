@@ -16,6 +16,7 @@
 
 .menu-left {
   width: 4rem;
+  min-width: 4rem;
   background-color: rgb(60, 155, 180);
   height: 18rem;
   margin-top: 3rem;

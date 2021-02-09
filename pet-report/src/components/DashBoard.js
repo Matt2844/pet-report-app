@@ -192,8 +192,6 @@ export default function DashBoard () {
         </button>
         <QuestionsModal />
         <SettingsModal />
-
-
       </div>
 
       <div className="report-card-section" id="screenshot">
