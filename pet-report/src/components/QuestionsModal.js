@@ -52,7 +52,7 @@ export default function QuestionsModal () {
         </li>
         <li>
           <h4>2. Can I Customize The Report Card?</h4>
-          <p>Yes, just select a theme that suits your client the best. You can also select which fields you want to display.
+          <p>Yes, just select a pet service type that suits your client the best. You can also select which fields you want to display.
           Click the 'x' when editing the form to hide a specific field. You can also change the font style.
           </p>
         </li>

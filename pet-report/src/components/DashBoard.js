@@ -209,7 +209,7 @@ export default function DashBoard () {
           {selectTheme === true ? (
             <div className="report-data-section">
               <div className="report-data-col1">
-                <p className="get-started">Select a theme to get started</p>
+                <p className="get-started">Select a pet service type to get started</p>
               </div>
             </div>
           ) : null}
@@ -383,7 +383,7 @@ export default function DashBoard () {
         <div className="menu-col-1">
 
           <div className="input-container">
-            <label>Theme:</label>
+            <label>Pet Service Type:</label>
             <select className="clean-label" onChange={event => findTheme(event.target.value)}>
               <option value="Select" selected>Select</option>
               <option value="Basic">Basic</option>

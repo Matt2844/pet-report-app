@@ -61,7 +61,7 @@ export default function QuestionsModal () {
       <Divider />
       <form className="save-settings">
         <div className="theme-settings">
-          <InputLabel id="theme-select-label">Theme</InputLabel>
+          <InputLabel id="theme-select-label">Pet Service Type</InputLabel>
           <Select
             labelId="theme-select-settings"
             id="theme-select-field"

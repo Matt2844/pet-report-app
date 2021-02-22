@@ -31,10 +31,10 @@ export default function NavAppBar () {
       <AppBar position="static" className={classes.bar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Pet Report Pro
+            Pet Report Pro <em>(Currently In Development)</em>
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Register</Button>
+          <Button color="inherit">Login (N/A)</Button>
+          <Button color="inherit">Register (N/A)</Button>
         </Toolbar>
       </AppBar>
     </div>
