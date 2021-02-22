@@ -79,7 +79,7 @@ export default function QuestionsModal () {
           <TextField label="Company Name" />
         </div>
         <div className="theme-settings">
-          <InputLabel id="theme-select-label">Heading</InputLabel>
+          <InputLabel id="theme-select-label">Heading (Font)</InputLabel>
           <Select
             labelId="theme-select-settings"
             id="theme-select-field"
@@ -94,7 +94,7 @@ export default function QuestionsModal () {
           </Select>
         </div>
         <div className="theme-settings">
-          <InputLabel id="theme-select-label">Body</InputLabel>
+          <InputLabel id="theme-select-label">Body (Font)</InputLabel>
           <Select
             labelId="theme-select-settings"
             id="theme-select-field"

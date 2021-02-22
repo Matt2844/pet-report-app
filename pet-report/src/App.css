@@ -116,11 +116,12 @@
 .input-container {
   margin: 5px 3px 0px 3px;
   padding-left: 3px;
-  padding: 5px;
-  font-size: 13px;
+  padding: 6px;
+  font-size: 14px;
   color: white; 
   background-color: rgb(60, 155, 180);
   position: relative;
+  
 }
 
 .input-container-notes textarea {
