@@ -64,6 +64,14 @@ export default function QuestionsModal () {
           will already be filled out with your selected settings.
           </p>
         </li>
+        <li>
+          <h4>4. What does the 'Review CTA' button mean and do?</h4>
+          <p>CTA stands for call to action. The 'Review CTA' button lets you decide if you want to prompt customers to leave a review somewhere.<br /><br />
+          It is recommended that you direct your customers to leave a Google review. The more (good quality) reviews you have on Google, the higher your SEO rankings will be.
+            The higher the SEO ranking, the easier it is for customers to view and choose your business over competitors.<br /><br />
+            If none of that made any sense. Google 'Google My Business' and set up an account for your business.
+          </p>
+        </li>
 
       </ul>
     </div >

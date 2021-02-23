@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   list: {
@@ -18,6 +19,10 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
+  submit: {
+    marginTop: '3rem',
+    marginLeft: '2rem',
+  }
 });
 
 export default function QuestionsModal () {
@@ -57,7 +62,7 @@ export default function QuestionsModal () {
       role="presentation"
 
     >
-      <h3 className="settings-heading">Settings</h3>
+      <h3 className="settings-heading">Settings (N/A)</h3>
       <Divider />
       <form className="save-settings">
         <div className="theme-settings">
@@ -107,6 +112,12 @@ export default function QuestionsModal () {
             <MenuItem value={'Didot'}>Didot</MenuItem>
           </Select>
         </div>
+        <div className="company-review-url">
+          <TextField label="Review CTA URL" />
+        </div>
+
+        <Button className={classes.submit} type="submit" variant="outlined">Submit</Button>
+
 
       </form>
     </div >

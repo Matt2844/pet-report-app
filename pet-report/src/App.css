@@ -250,6 +250,7 @@ li {
 
 li h4 {
   font-weight: 1000;
+  color: rgb(44, 154, 184);
 }
 
 .faq-heading,
@@ -258,7 +259,9 @@ li h4 {
   text-align: center;
 }
 
-.company-name-settings {
+.company-name-settings, 
+.company-review-url,
+Button .submit-button {
   margin-top: 2.5rem;
   margin-left: 2rem;
 }
