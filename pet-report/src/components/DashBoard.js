@@ -157,6 +157,7 @@ export default function DashBoard () {
   const saveToPDF = () => {
 
     const formArea = document.getElementById('screenshot');
+    document.getElementById('screenshot').style.color = 'rgb(0, 0, 0)'
 
     domtoimage.toPng(formArea)
       .then((dataUrl) => {
@@ -167,13 +168,16 @@ export default function DashBoard () {
         pdf.addImage(dataUrl, "JPEG", 10, 10);
         pdf.save(`${petName}_${new Date().toISOString()}.PR-PRO.pdf`)
       })
+      .then(() => {
+        document.getElementById('screenshot').style.color = 'rgb(255, 255, 255)'
+      })
   };
 
   // Change background from light to dark, or dark to light
   const changeTheme = () => {
     if (backgroundTheme === 'light') {
       document.body.style.backgroundColor = '#0f0f0f'
-      document.getElementById('screenshot').style.color = 'rgb(60, 155, 180)'
+      document.getElementById('screenshot').style.color = 'rgb(255, 255, 255)'
       setBackgroundTheme('dark');
     }
     if (backgroundTheme === 'dark') {
