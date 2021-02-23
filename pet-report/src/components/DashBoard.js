@@ -108,6 +108,11 @@ export default function DashBoard () {
     } else if (theme !== 'Walking') {
       setWalkingTheme(false)
     }
+    if (theme === 'Select') {
+      setSelectTheme(true)
+    } else if (theme !== 'Select') {
+      setSelectTheme(false)
+    }
 
   }
 
@@ -385,7 +390,7 @@ export default function DashBoard () {
           <div className="input-container">
             <label>Pet Service Type:</label>
             <select className="clean-label" onChange={event => findTheme(event.target.value)}>
-              <option value="Select" selected>Select</option>
+              <option value="Select" selected>Select...</option>
               <option value="Basic">Basic</option>
               <option value="Boarding">Boarding</option>
               <option value="Pet Sitting">Pet Sitting</option>

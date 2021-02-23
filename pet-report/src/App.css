@@ -121,7 +121,6 @@
   color: white; 
   background-color: rgb(60, 155, 180);
   position: relative;
-  
 }
 
 .input-container-notes textarea {
@@ -177,14 +176,18 @@ select {
   cursor: pointer;
 }
 
+
+
 .clean-label {
+  -webkit-appearance: none; 
   padding: 0;
   border: none;
   outline: none;
   font: inherit;
-  color: inherit;
+  color: rgb(0, 0, 0);
   background: none;
   padding-left: 15px;
+  
 }
 
 .date-required,
