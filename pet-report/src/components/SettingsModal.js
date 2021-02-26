@@ -22,6 +22,7 @@ const useStyles = makeStyles({
   submit: {
     marginTop: '3rem',
     marginLeft: '2rem',
+    height: '1.8rem'
   }
 });
 

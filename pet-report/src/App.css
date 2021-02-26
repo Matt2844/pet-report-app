@@ -139,6 +139,47 @@
   margin-top: 0.3rem;
 }
 
+/* LOGIN SECTION */
+
+.login-section {
+  border: 1px solid black; 
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5rem;
+  width: 35rem;
+  height: 26rem;
+  display: flex;
+}
+
+.login-section-login {
+  border: 1px solid red;
+  width: 50%;
+}
+
+.login-section-photo {
+  border: 1px solid blue;
+  width: 50%;
+}
+
+.login-card {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 16px;
+  width: 13rem;
+  height: 18rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login-card h3 {
+  margin-top: 3rem;
+}
+
+.login-card input {
+  margin-top: 2rem;
+}
+
+
 /* BUTTONS AND FORMS */
 
 a {
