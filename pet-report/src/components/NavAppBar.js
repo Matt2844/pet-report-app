@@ -33,8 +33,8 @@ export default function NavAppBar () {
           <Typography variant="h6" className={classes.title}>
             Pet Report Pro <em>(Currently In Development)</em>
           </Typography>
-          <Button color="inherit">Login (N/A)</Button>
-          <Button color="inherit">Register (N/A)</Button>
+          <a href={'/login'}><Button color="inherit">Login (N/A)</Button></a>
+          <a href={'/register'}><Button color="inherit">Register (N/A)</Button></a>
         </Toolbar>
       </AppBar>
     </div>

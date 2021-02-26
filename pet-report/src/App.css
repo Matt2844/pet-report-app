@@ -141,6 +141,11 @@
 
 /* BUTTONS AND FORMS */
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .menu-right button {
   all: unset;
   color: white;
