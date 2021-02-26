@@ -34,6 +34,7 @@ export default function DashBoard () {
   const [behaviour, setBehaviour] = useState('Very Well Behaved')
   const [grade, setGrade] = useState('A+')
   const [notes, setNotes] = useState('To edit notes, use the panel to the right. To save this report card, click the PDF icon. When sending an email to a client, attach or drag the PDF into the body of the email.')
+  const [CTA, setCTA] = useState('www.example.com')
   /* Boarding Theme */
   const [gender, setGender] = useState('Their')
   const [boardingFriends, setBoardingFriends] = useState('[Pet Friends]')
@@ -60,6 +61,7 @@ export default function DashBoard () {
   const [showBehaviour, setShowBehaviour] = useState(true)
   const [showGrade, setShowGrade] = useState(true)
   const [showNotes, setShowNotes] = useState(true)
+  const [showCTA, setShowCTA] = useState(false)
   /* Boarding Theme */
   const [showBoardingFriends, setShowBoardingFriends] = useState(true)
   const [showFavoriteToy, setShowFavoriteToy] = useState(true)
@@ -116,22 +118,6 @@ export default function DashBoard () {
 
   }
 
-  // reads what font is selected
-  const findFont = (font) => {
-    if (font === 'Sans Serif') {
-      document.getElementById('screenshot').style.fontFamily = "sans-serif"
-    }
-    if (font === 'Candara') {
-      document.getElementById('screenshot').style.fontFamily = "candara"
-    }
-    if (font === 'Copperplate') {
-      document.getElementById('screenshot').style.fontFamily = "copperplate"
-    }
-    if (font === 'Didot') {
-      document.getElementById('screenshot').style.fontFamily = "didot"
-    }
-  }
-
   // Reads what font is selected for Company name
   const findCompanyFont = (font) => {
     if (font === 'Sans Serif') {
@@ -169,7 +155,9 @@ export default function DashBoard () {
         pdf.save(`${petName}_${new Date().toISOString()}.PR-PRO.pdf`)
       })
       .then(() => {
-        document.getElementById('screenshot').style.color = 'rgb(255, 255, 255)'
+        if (backgroundTheme === 'dark') {
+          document.getElementById('screenshot').style.color = 'rgb(255, 255, 255)'
+        }
       })
   };
 
@@ -252,6 +240,9 @@ export default function DashBoard () {
                     <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
+                {showCTA === true ? (
+                  <div className="review-cta">Please leave a review at {CTA}</div>
+                ) : null}
               </div>
             </div>
           ) : null}
@@ -277,6 +268,9 @@ export default function DashBoard () {
                     <div className="notes">Notes:</div>
                     <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
+                ) : null}
+                {showCTA === true ? (
+                  <div className="review-cta">Please leave a review at {CTA}</div>
                 ) : null}
               </div>
             </div>
@@ -313,7 +307,9 @@ export default function DashBoard () {
                     <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
                 ) : null}
-
+                {showCTA === true ? (
+                  <div className="review-cta">Please leave a review at {CTA}</div>
+                ) : null}
               </div>
             </div>
           ) : null}
@@ -342,6 +338,9 @@ export default function DashBoard () {
                     <div className="notes">Notes:</div>
                     <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
+                ) : null}
+                {showCTA === true ? (
+                  <div className="review-cta">Please leave a review at {CTA}</div>
                 ) : null}
               </div>
             </div>
@@ -377,6 +376,9 @@ export default function DashBoard () {
                     <div className="notes">Notes:</div>
                     <textarea className="notes-input" rows="9" cols="67" value={notes}></textarea>
                   </div>
+                ) : null}
+                {showCTA === true ? (
+                  <div className="review-cta">Feel free to leave a review at {CTA}</div>
                 ) : null}
               </div>
             </div>
@@ -668,6 +670,14 @@ export default function DashBoard () {
             </textarea>
           </div>
 
+          {!selectTheme ? (
+            <div className="input-container">
+              <label>Suggest Review URL:</label>
+              <input className="total-walks" onChange={event => setCTA(event.target.value)} type="text"></input>
+              <button onClick={() => setShowCTA(!showCTA)}>{showCTA ? "x" : "show"} </button>
+            </div>
+          ) : null}
+
         </div >
 
 
@@ -691,25 +701,13 @@ export default function DashBoard () {
           <div className="input-container">
             <label className="company-font">Heading:</label>
             <select className="clean-label" onChange={event => findCompanyFont(event.target.value)}>
-              <option value="Sans Serif" selected>Sans Serif</option>
+              <option value="Sans Serif">Sans Serif</option>
               <option value="Candara">Candara</option>
               <option value="Copperplate">Copperplate</option>
-              <option value="Didot">Didot</option>
+              <option value="Didot" selected>Didot</option>
               <option value="Cursive">Cursive</option>
             </select>
           </div>
-
-          <div className="input-container">
-            <label>Body:</label>
-            <select className="report-font clean-label" onChange={event => findFont(event.target.value)}>
-              <option value="Sans Serif" selected>Sans Serif</option>
-              <option value="Candara">Candara</option>
-              <option value="Copperplate">Copperplate</option>
-              <option value="Didot">Didot</option>
-            </select>
-          </div>
-
-
 
         </div>
 

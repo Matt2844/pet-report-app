@@ -31,7 +31,7 @@
 }
 
 .report-card-section {
-  font-family: sans-serif;
+  font-family: 'didot', sans-serif;
   width: 55rem;  
 }
 
@@ -69,9 +69,10 @@
 }
 
 .get-started {
-  margin-left: 7.5rem;
+  margin-left: 6.3rem;
   margin-top: 8rem;
   font-family: 'Roboto';
+  font-size: 20px;
 }
 
 .report-data-section {
@@ -261,7 +262,7 @@ li h4 {
 
 .company-name-settings, 
 .company-review-url,
-Button .submit-button {
+.submit-button {
   margin-top: 2.5rem;
   margin-left: 2rem;
 }

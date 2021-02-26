@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 export default function QuestionsModal () {
   const classes = useStyles();
   const [theme, setTheme] = useState('Basic')
-  const [heading, setHeading] = useState('Sans Serif')
+  const [heading, setHeading] = useState('Didot')
   const [body, setBody] = useState('Sans Serif')
   const [state, setState] = useState({
     right: false,
@@ -91,29 +91,16 @@ export default function QuestionsModal () {
             value={heading}
             onChange={handleChangeHeading}
           >
+            <MenuItem value={'Didot'}>Didot</MenuItem>
             <MenuItem value={'Sans Serif'}>Sans Serif</MenuItem>
             <MenuItem value={'Candera'}>Candera</MenuItem>
             <MenuItem value={'Copperplate'}>Copperplate</MenuItem>
-            <MenuItem value={'Didot'}>Didot</MenuItem>
             <MenuItem value={'Cursive'}>Cursive</MenuItem>
           </Select>
         </div>
-        <div className="theme-settings">
-          <InputLabel id="theme-select-label">Body (Font)</InputLabel>
-          <Select
-            labelId="theme-select-settings"
-            id="theme-select-field"
-            value={body}
-            onChange={handleChangeBody}
-          >
-            <MenuItem value={'Sans Serif'}>Sans Serif</MenuItem>
-            <MenuItem value={'Candera'}>Candera</MenuItem>
-            <MenuItem value={'Copperplate'}></MenuItem>
-            <MenuItem value={'Didot'}>Didot</MenuItem>
-          </Select>
-        </div>
+
         <div className="company-review-url">
-          <TextField label="Review CTA URL" />
+          <TextField label="Suggest Review URL" />
         </div>
 
         <Button className={classes.submit} type="submit" variant="outlined">Submit</Button>
