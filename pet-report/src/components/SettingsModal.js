@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles({
   list: {
     width: 425,
@@ -30,7 +31,6 @@ export default function QuestionsModal () {
   const classes = useStyles();
   const [theme, setTheme] = useState('Basic')
   const [heading, setHeading] = useState('Didot')
-  const [body, setBody] = useState('Sans Serif')
   const [state, setState] = useState({
     right: false,
   });
@@ -49,10 +49,6 @@ export default function QuestionsModal () {
 
   const handleChangeHeading = (event) => {
     setHeading(event.target.value);
-  };
-
-  const handleChangeBody = (event) => {
-    setBody(event.target.value);
   };
 
   const list = (anchor) => (

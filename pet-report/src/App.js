@@ -6,6 +6,7 @@ import NavAppBar from './components/NavAppBar'
 import DashBoard from './components/DashBoard'
 import Login from './components/Login'
 import Register from './components/Register'
+import About from './components/About'
 
 
 
@@ -18,6 +19,7 @@ export default function App () {
         <Route exact path='/dashboard' component={DashBoard} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/about' component={About} />
       </>
     </div>
 
