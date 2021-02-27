@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+h3 {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.about-intro {
+  display: flex;
+  border: 1px solid black;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50rem;
+}
+
+.about-intro-text {
+  border: 1px solid red;
+  width: 50%;
+  height: 25rem;
+  background-size: cover;
+}
+
+.about-intro-text h4 {
+  border: 1px solid green;
+}
+
+.about-intro-photo {
+  border: 1px solid purple;
+  width: 50%;
+  background-size: cover;
+}
+
