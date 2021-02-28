@@ -3,7 +3,7 @@
 }
 
 /* color scheme main turqoise = background-color: rgb(60, 155, 180); */
-/* color scheme secondary = background-color: rgb(203, 243, 254); */
+/* color scheme secondary = background-color: rgb(147, 207, 244); */
 
 
 /* SECTIONAL DIVIDERS */
@@ -18,10 +18,11 @@
 .menu-left {
   width: 4rem;
   min-width: 4rem;
-  background-color: rgb(60, 155, 180);
+  background-color: rgb(147, 207, 244);
   height: 18rem;
   margin-top: 3rem;
   border-radius: 30px;
+  border: 1px solid grey;
   box-shadow: 2px 3px 5px grey; 
 }
 
@@ -120,9 +121,11 @@
   padding-left: 3px;
   padding: 6px;
   font-size: 14px;
-  color: white; 
-  background-color: rgb(60, 155, 180);
+  color: black; 
+  background-color: rgb(147, 207, 244);
   position: relative;
+  border: 1px solid grey;
+  border-radius: 3px;
 }
 
 .input-container-notes textarea {

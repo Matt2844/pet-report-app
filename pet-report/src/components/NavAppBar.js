@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   bar: {
-    backgroundColor: 'rgb(60, 155, 180)',
+    backgroundColor: 'rgb(28,28,28)',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -33,6 +33,7 @@ export default function NavAppBar () {
           <Typography variant="h6" className={classes.title}>
             Pet Report Pro <em>(Currently In Development)</em>
           </Typography>
+          <a href={'/dashboard'}><Button color="inherit">Dashboard</Button></a>
           <a href={'/about'}><Button color="inherit">About</Button></a>
           <a href={'/login'}><Button color="inherit">Login (N/A)</Button></a>
           <a href={'/register'}><Button color="inherit">Register (N/A)</Button></a>
