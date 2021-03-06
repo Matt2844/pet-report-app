@@ -1,12 +1,11 @@
 import React from "react";
 import './App.css'
 import './index.css'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import NavAppBar from './components/NavAppBar'
 import DashBoard from './components/DashBoard'
-import Login from './components/Login'
-import Register from './components/Register'
 import About from './components/About'
+import Donate from './components/Donate'
 
 
 
@@ -16,9 +15,8 @@ export default function App () {
     <div clasName="App-main">
       <NavAppBar />
       <>
-        <Route exact path='/dashboard' component={DashBoard} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
+        <Route exact path='/create-report' component={DashBoard} />
+        <Route exact path='/donate' component={Donate} />
         <Route exact path='/about' component={About} />
       </>
     </div>

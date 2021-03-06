@@ -4,7 +4,7 @@ import jsPdf from "jspdf";
 import domtoimage from 'dom-to-image'
 
 import QuestionsModal from './QuestionsModal.js'
-import SettingsModal from './SettingsModal.js'
+import Email from './Email.js'
 
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf'
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
@@ -188,7 +188,9 @@ export default function DashBoard () {
           <WbSunnyIcon />
         </button>
         <QuestionsModal />
-        <SettingsModal />
+        <Email
+          subjectMessage={`${petName}'s Report Card`}
+        />
       </div>
 
       <div className="report-card-section" id="screenshot">
