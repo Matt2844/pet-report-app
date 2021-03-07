@@ -4,7 +4,7 @@ import Checkout from './Checkout'
 export default function() {
 
   return (
-    <div>donate
+    <div>donate.js
       <Checkout />
     </div>
   )
