@@ -3,21 +3,13 @@ import { loadStripe } from "@stripe/stripe-js";
 import "../App.css";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
+
 const stripePromise = loadStripe("pk_test_51IRkeOJSwIRdUzXUe1NVZ7aeCuVhohGkCRZdi5dfumFWnAERXwD7BSr9mdYZgJLUC5FMhV1KOWTi76tJ5be1Uagi003xv54HJ2");
+
 const ProductDisplay = ({ handleClick }) => (
   <section>
-    <div className="product">
-      <img
-        src="https://i.imgur.com/EHyR2nP.png"
-        alt="The cover of Stubborn Attachments"
-      />
-      <div className="description">
-        <h3>Stubborn Attachments</h3>
-        <h5>$20.00</h5>
-      </div>
-    </div>
     <button type="button" id="checkout-button" role="link" onClick={handleClick}>
-      Checkout
+      Donate $20
     </button>
   </section>
 );
@@ -33,11 +25,11 @@ export default function Checkout () {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
     if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
+      setMessage("Donation placed! You will receive an email confirmation.");
     }
     if (query.get("canceled")) {
       setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
+        "Order canceled -- continue to look around and donate when you're ready."
       );
     }
   }, []);

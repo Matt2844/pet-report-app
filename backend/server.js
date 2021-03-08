@@ -13,8 +13,7 @@ app.post('/create-checkout-session', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Stubborn Attachments',
-            images: ['https://i.imgur.com/EHyR2nP.png'],
+            name: 'Donation to Pet Report',
           },
           unit_amount: 2000,
         },
