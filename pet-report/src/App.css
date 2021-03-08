@@ -2,10 +2,6 @@
   box-sizing: border-box; 
 }
 
-/* color scheme main turqoise = background-color: rgb(60, 155, 180); */
-/* color scheme secondary = background-color: rgb(147, 207, 244); */
-
-
 /* SECTIONAL DIVIDERS */
 
 .dashboard-wrapper {
@@ -302,7 +298,7 @@ select {
   color: white;
 }
 
-/* INFO AND SETTINGS DRAWERS */
+/* INFO DRAWER */
 
 ul {
   list-style: none;
