@@ -2,10 +2,6 @@
   box-sizing: border-box; 
 }
 
-/* color scheme main turqoise = background-color: rgb(60, 155, 180); */
-/* color scheme secondary = background-color: rgb(147, 207, 244); */
-
-
 /* SECTIONAL DIVIDERS */
 
 .dashboard-wrapper {
@@ -302,7 +298,7 @@ select {
   color: white;
 }
 
-/* INFO AND SETTINGS DRAWERS */
+/* INFO DRAWER */
 
 ul {
   list-style: none;
@@ -321,4 +317,43 @@ li h4 {
 .faq-heading {
   margin-bottom: 1.7rem;
   text-align: center;
+}
+
+/* DONATION PAGE */
+
+.donation-text a {
+  color: blue;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.donation-text p,
+.donation-text h3 {
+  margin-right: auto;
+  margin-left: 30%;
+  margin-top: 3rem;
+  width: 34rem;
+  font-size: 18px;
+}
+
+section #checkout-button {
+  all: unset;
+  text-align: center;
+  width: 10rem;
+  margin-right: auto;
+  margin-left: 30%;
+  margin-top: 5rem;
+  padding: 0.8rem;
+  background-color: rgb(147, 207, 244);
+  border: 1px solid grey;
+  font-size: 18px;
+  box-shadow: 1px 1px 1px black;
+  cursor: pointer;
+  border-radius: 33px;
+}
+
+#checkout-button:hover {
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.4s ease-out;
+  background-color: rgb(114, 194, 244);
 }
