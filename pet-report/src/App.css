@@ -327,10 +327,11 @@ li h4 {
   text-decoration: underline;
 }
 
-.donation-text p {
+.donation-text p,
+.donation-text h3 {
   margin-right: auto;
   margin-left: 30%;
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 34rem;
   font-size: 18px;
 }
@@ -338,7 +339,7 @@ li h4 {
 section #checkout-button {
   all: unset;
   text-align: center;
-  width: 8rem;
+  width: 10rem;
   margin-right: auto;
   margin-left: 30%;
   margin-top: 5rem;
@@ -348,6 +349,7 @@ section #checkout-button {
   font-size: 18px;
   box-shadow: 1px 1px 1px black;
   cursor: pointer;
+  border-radius: 33px;
 }
 
 #checkout-button:hover {

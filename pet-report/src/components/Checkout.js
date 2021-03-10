@@ -4,12 +4,12 @@ import "../App.css";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
-const stripePromise = loadStripe("pk_test_51IRkeOJSwIRdUzXUe1NVZ7aeCuVhohGkCRZdi5dfumFWnAERXwD7BSr9mdYZgJLUC5FMhV1KOWTi76tJ5be1Uagi003xv54HJ2");
+const stripePromise = loadStripe("pk_live_51IRkeOJSwIRdUzXUxuUEDDP8vmziDARdG4ySB8W8nx3x0K0SEoL95d0I0QzkCGqimG5xr2KjMKwJLl3c9kW684iR00KuT7NGPZ");
 
 const ProductDisplay = ({ handleClick }) => (
   <section>
     <button type="button" id="checkout-button" role="link" onClick={handleClick}>
-      Donate $20
+      Donate $20 USD
     </button>
   </section>
 );
