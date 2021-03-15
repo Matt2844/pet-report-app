@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 import NavAppBar from './components/NavAppBar'
 import DashBoard from './components/DashBoard'
 import About from './components/About'
-import Donate from './components/Donate'
 
 
 
@@ -16,7 +15,6 @@ export default function App () {
       <NavAppBar />
       <>
         <Route exact path='/create-report' component={DashBoard} />
-        <Route exact path='/donate' component={Donate} />
         <Route exact path='/about' component={About} />
       </>
     </div>
