@@ -18,7 +18,9 @@ export default function About () {
         </div>
         <img className="about-intro-photo" src="/images/pr-pro-about-cat.jpg" />
       </section>
-      <div className="youtube-video">Youtube Video In This Section</div>
+      <section className="learn-more">
+        <iframe width="850" height="550" src="https://www.youtube.com/embed/lmPR5wxR7No" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </section>
     </div>
   )
 }

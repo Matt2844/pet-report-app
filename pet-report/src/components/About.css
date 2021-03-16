@@ -59,10 +59,8 @@
   margin-left: 1rem;
 }
 
-.youtube-video {
+section.learn-more {
+  text-align: center;
   margin-top: 5rem;
-  height: 20rem; 
-  background-color: rgb(198, 198, 198);
-  color: white; 
-  font-size: 32px;
+  margin-bottom: 8rem;
 }

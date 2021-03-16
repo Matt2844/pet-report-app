@@ -139,55 +139,7 @@
   margin-top: 0.3rem;
 }
 
-/* LOGIN SECTION */
 
-.login-section, 
-.register-section {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 5rem;
-  width: 48rem;
-  height: 30rem;
-  display: flex;
-}
-
-.login-section-login, 
-.register-section-register {
-  width: 50%;
-}
-
-.login-section-photo,
-.reguster-section-photo {
-  width: 50%;
-}
-
-.login-card,
-.register-card {
-  text-align: center;
-  border: 1px solid grey;
-  border-radius: 16px;
-  width: 18rem;
-  height: 24rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 3.3rem;
-}
-
-.login-password, 
-.login-email,
-.register-password,
-.register-email {
-  margin-top: 2rem;
-}
-
-.login-dog,
-.register-dog {
-  height: 24rem; 
-  width: auto; 
-  margin-top: 3.3rem;
-  border-radius: 18px;
-  border: 1px solid grey;
-}
 
 
 /* BUTTONS AND FORMS */
@@ -319,41 +271,5 @@ li h4 {
   text-align: center;
 }
 
-/* DONATION PAGE */
 
-.donation-text a {
-  color: blue;
-  font-weight: 900;
-  text-decoration: underline;
-}
 
-.donation-text p,
-.donation-text h3 {
-  margin-right: auto;
-  margin-left: 30%;
-  margin-top: 3rem;
-  width: 34rem;
-  font-size: 18px;
-}
-
-section #checkout-button {
-  all: unset;
-  text-align: center;
-  width: 10rem;
-  margin-right: auto;
-  margin-left: 30%;
-  margin-top: 5rem;
-  padding: 0.8rem;
-  background-color: rgb(147, 207, 244);
-  border: 1px solid grey;
-  font-size: 18px;
-  box-shadow: 1px 1px 1px black;
-  cursor: pointer;
-  border-radius: 33px;
-}
-
-#checkout-button:hover {
-  box-shadow: 3px 3px 3px gray;
-  transition: 0.4s ease-out;
-  background-color: rgb(114, 194, 244);
-}

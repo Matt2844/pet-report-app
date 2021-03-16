@@ -35,6 +35,7 @@ export default function NavAppBar () {
           </Typography>
           <a href={'/create-report'}><Button color="inherit">Create A Report</Button></a>
           <a href={'/about'}><Button color="inherit">About</Button></a>
+          <a href={'/donate'}><Button color="inherit">Donate</Button></a>
         </Toolbar>
       </AppBar>
     </div>
