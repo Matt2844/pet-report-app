@@ -271,5 +271,22 @@ li h4 {
   text-align: center;
 }
 
+/* DONATE PAGE */
+
+.donate-wrapper p a {
+  text-decoration: underline;
+  color: black;
+}
+
+.donate-wrapper {
+margin: auto;
+width: 50%;
+margin-top: 4rem;
+}
+
+.donate-wrapper p {
+  margin-top: 2rem;
+  line-height: 1.5;
+}
 
 
